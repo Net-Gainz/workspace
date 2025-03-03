@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NetGainz - Lead Assignment</title>
+    <link rel="icon" type="image/x-icon"
+        href="https://res.cloudinary.com/dcrh4vlwd/image/upload/v1735835515/NetGainz_nh0i0x.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <div id="companyHeader" class="company-header">
+        <i style="
+          height: 100px;
+          background-image: url('https://res.cloudinary.com/dcrh4vlwd/image/upload/v1740341334/NBG_mqvelr.png');
+          background-size: contain;
+          width: 195px;
+          background-repeat: no-repeat;
+          display: inline-block;
+          margin: -22px;
+          margin-top: -10px;
+          margin-bottom: -50pxq;
+        "></i>
+    </div>
+
+    <div class="user-info-container" id="user-info-container" style="display: none">
+        <img id="userProfilePic" class="user-profile-pic" src="" alt="Profile Picture" />
+        <div class="user-details">
+            <div class="user-name" id="userNameDisplay"></div>
+            <div class="wallet-info">
+                <i class="fas fa-wallet wallet-icon pf-wallet"></i>
+                <span id="walletAmountDisplay" class="wallet-amount"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="formContainer">
+        <h2>Enter Details</h2>
+        <p>to access Assigned Leads</p>
+        <label for="name" class="label">Name</label>
+        <input type="text" id="name" placeholder="Enter Your Name" required />
+        <label for="mobile" class="label">Mobile Number</label>
+        <input type="text" id="mobile" placeholder="Enter Your Mobile Number" inputmode="numeric" pattern="[0-9]*"
+            required />
+        <button onclick="fetchData()">Login</button>
+        <div id="errorMessage" class="error-message" style="display: none"></div>
+        <div id="loadingWave" class="loading-wave" style="display: none">
+            <span></span><span></span><span></span>
+        </div>
+        <p>
+            By continuing, you agree to our Terms & Conditions and Privacy Policy
+        </p>
+    </div>
+    <div id="profileModal" class="modal full-page-modal" style="display: none">
+        <div class="modal-content full-page-content">
+            <span class="close-button" id="closeModal">&times;</span>
+            <div id="profileDetails" class="profile-details-container"></div>
+        </div>
+    </div>
+
+    <div id="contentContainer" class="parent-container" style="display: none"></div>
+
+    <div id="bottomNav" class="bottom-nav" style="display: none"></div>
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
