@@ -196,7 +196,7 @@ function fetchData() {
                                 const customText = `🌟 *${linkObj.name}* 🌟
 
 *📌Registration Link:*
-${linkObj.url}&a=${data.profile.partnerCode}
+${linkObj.url}${data.profile.partnerCode}
 
 🎥 *How to open account:*
 ${linkObj.vurl}
