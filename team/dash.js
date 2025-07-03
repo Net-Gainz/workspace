@@ -221,7 +221,7 @@ ${linkObj.vurl}
 
                         let linkURL = document.createElement("div");
                         linkURL.innerText =
-                            linkObj.url + `&a=${data.profile.partnerCode}`;
+                            linkObj.url + `${data.profile.partnerCode}`;
                         linkURL.classList.add("link-url");
 
                         linkNameContainer.appendChild(linkName);
