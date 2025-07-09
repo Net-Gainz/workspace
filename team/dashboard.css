@@ -933,4 +933,16 @@ button:hover {
         height: 90px;
         margin-bottom: 2px;
     }
+
+    .lead-name {
+    font-weight:500;
+    font-size: 1rem;
+    display: block;
+}
+.lead-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* or center if you want center alignment */
+    margin-bottom: 8px;
+}
 }

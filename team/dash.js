@@ -18,7 +18,7 @@ function fetchData() {
     loadingWave.style.display = "flex";
 
     var scriptURL =
-        "https://script.google.com/macros/s/AKfycbyVi1q-oPg2NSAE2x8OYao2GpWGJbNgqJgJsZLAF93nyNaNTaDNAFvJoykGXC0y5Cjevg/exec";
+        "https://script.google.com/macros/s/AKfycbwlE1zK562a9Bov9WmKxOhOkpLJfQZTqedVA8I-n19GcghzVM2L3bKF6aTPxFVzKyCiBw/exec";
 
     fetch(
         scriptURL +
@@ -195,10 +195,10 @@ function fetchData() {
                             if (navigator.share) {
                                 const customText = `🌟 *${linkObj.name}* 🌟
 
-*📌Registration Link:*
+*📌Onboarding Link:*
 ${linkObj.url}${data.profile.partnerCode}
 
-🎥 *How to open account:*
+🎥 *Onboardng Video:*
 ${linkObj.vurl}
 
 *Vendor Name : ${employeeName}*`;
@@ -221,7 +221,7 @@ ${linkObj.vurl}
 
                         let linkURL = document.createElement("div");
                         linkURL.innerText =
-                            linkObj.url + `${data.profile.partnerCode}`;
+                            linkObj.url + data.profile.partnerCode;
                         linkURL.classList.add("link-url");
 
                         linkNameContainer.appendChild(linkName);
@@ -422,6 +422,10 @@ function displayLeads(leads, page = 1, pageSize = 10) {
             lead.leadId.slice(3, -3).replace(/\d/g, "*") +
             lead.leadId.slice(-3);
 
+        let leadNameSpan = document.createElement("span");
+        leadNameSpan.classList.add("lead-name");
+        leadNameSpan.innerText = lead.leadName || "Unnamed Lead";
+
         let leadInfo = document.createElement("span");
         leadInfo.classList.add("lead-info");
         leadInfo.innerText = maskedNumber;
@@ -443,7 +447,14 @@ function displayLeads(leads, page = 1, pageSize = 10) {
         leadButtons.appendChild(whatsappLink);
         leadButtons.appendChild(callLink);
 
-        leadTop.appendChild(leadInfo);
+        let leadInfoWrapper = document.createElement("div");
+        leadInfoWrapper.classList.add("lead-info-wrapper");
+
+        leadInfoWrapper.appendChild(leadNameSpan);
+        leadInfoWrapper.appendChild(leadInfo);
+
+
+        leadTop.appendChild(leadInfoWrapper);
         leadTop.appendChild(leadButtons);
 
         // Add call status dropdown
@@ -495,7 +506,6 @@ function displayLeads(leads, page = 1, pageSize = 10) {
 
         leadList.appendChild(leadCard);
     });
-
     paginationDiv.innerHTML = `
 <button id="prevLeadPage" ${page === 1 ? "disabled" : ""
         }><i class="fas fa-chevron-left"></i></button>
@@ -518,7 +528,7 @@ function displayLeads(leads, page = 1, pageSize = 10) {
 
 function submitCallStatus(leadId, callStatus, remarks) {
     fetch(
-        "https://script.google.com/macros/s/AKfycbyiTSBSUpsCx3zoc9JonAGkAEpEUf-eaDE4Ut84WJNZXdzmATeyijCSkztgZvJO3qIZdQ/exec",
+        "https://script.google.com/macros/s/AKfycbwlE1zK562a9Bov9WmKxOhOkpLJfQZTqedVA8I-n19GcghzVM2L3bKF6aTPxFVzKyCiBw/exec",
         {
             // Replace with your App Script URL
             method: "POST",
