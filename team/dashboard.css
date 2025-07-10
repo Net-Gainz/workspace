@@ -945,4 +945,10 @@ button:hover {
     align-items: flex-start; /* or center if you want center alignment */
     margin-bottom: 8px;
 }
+.scrollable-content {
+  height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 80px; /* Extra space for bottom nav/pagination */
+  box-sizing: border-box;
+}
 }
