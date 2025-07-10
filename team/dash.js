@@ -44,30 +44,31 @@ function fetchData() {
                 UserinfoContainer.style.display = "flex";
                 bottomNav.style.display = "flex";
 
-                contentContainer.innerHTML = `
-<h2 id="employeeNameDisplay" class="section-heading" style="display: block;"></h2>
-<div id="leadResult" class="tab-content" style="display: block;">
-<div id="leadList"></div>
-</div>
-<div class="pagination" id="leadPagination" style="display: flex;"></div>
+                contentContainer.innerHTML = `<div class="scrollable-content">
+  <h2 id="employeeNameDisplay" class="section-heading" style="display: block;"></h2>
+  <div id="leadResult" class="tab-content" style="display: block;">
+    <div id="leadList"></div>
+  </div>
+  <div class="pagination" id="leadPagination" style="display: flex;"></div>
 
-<h2 id="linksHeading" class="section-heading" style="display: none;">Live Links</h2>
-<div id="liveLinks" class="tab-content" style="display: none;">
-<div id="linkList"></div>
-</div>
+  <h2 id="linksHeading" class="section-heading" style="display: none;">Live Links</h2>
+  <div id="liveLinks" class="tab-content" style="display: none;">
+    <div id="linkList"></div>
+  </div>
 
-<h2 id="reportHeading" class="section-heading" style="display: none;">User Report</h2>
-<div id="reportTab" class="tab-content" style="display: none;">
-<div class="search-container">
-    <input type="text" id="search-input" placeholder="Search...">
+  <h2 id="reportHeading" class="section-heading" style="display: none;">User Report</h2>
+  <div id="reportTab" class="tab-content" style="display: none;">
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search...">
+    </div>
+    <div id="reportContent">
+        <table class="report-table">
+            <tbody id="reportTableBody"></tbody>
+        </table>
+    </div>
+  </div>
+  <div class="pagination" id="pagination" style="display: none;"></div>
 </div>
-<div id="reportContent">
-    <table class="report-table">
-        <tbody id="reportTableBody"></tbody>
-    </table>
-</div>
-</div>
-    <div class="pagination" id="pagination" style="display: none;"></div>
 
 
                 `;
