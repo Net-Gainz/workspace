@@ -18,7 +18,7 @@ function fetchData() {
     loadingWave.style.display = "flex";
 
     var scriptURL =
-        "https://script.google.com/macros/s/AKfycbwlE1zK562a9Bov9WmKxOhOkpLJfQZTqedVA8I-n19GcghzVM2L3bKF6aTPxFVzKyCiBw/exec";
+        "https://script.google.com/macros/s/AKfycbxsAmqy1aYh1oPQ4K7i3cUQA0hSJpt0uy_9mVu1v8F1jTfx6LsTvXKfeSrP49mLqpCcEg/exec";
 
     fetch(
         scriptURL +
@@ -527,17 +527,17 @@ function displayLeads(leads, page = 1, pageSize = 10) {
         );
 }
 
-function submitCallStatus(leadId, callStatus, remarks) {
+function submitCallStatus(leadCode, callStatus, remarks) {
     fetch(
-        "https://script.google.com/macros/s/AKfycbwlE1zK562a9Bov9WmKxOhOkpLJfQZTqedVA8I-n19GcghzVM2L3bKF6aTPxFVzKyCiBw/exec",
+        "https://script.google.com/macros/s/AKfycbxsAmqy1aYh1oPQ4K7i3cUQA0hSJpt0uy_9mVu1v8F1jTfx6LsTvXKfeSrP49mLqpCcEg/exec",
         {
             // Replace with your App Script URL
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
             },
-            body: `leadId=${encodeURIComponent(
-                leadId
+            body: `leadCode=${encodeURIComponent(
+                leadCode
             )}&callStatus=${encodeURIComponent(
                 callStatus
             )}&remarks=${encodeURIComponent(remarks)}`,
