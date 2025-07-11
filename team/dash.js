@@ -486,7 +486,7 @@ function displayLeads(leads, page = 1, pageSize = 10) {
         // Add event listeners for dropdown and textarea
         callStatusDropdown.addEventListener("change", () => {
             submitCallStatus(
-                lead.leadId,
+                lead.leadCode,
                 callStatusDropdown.value,
                 remarksTextArea.value
             );
@@ -494,7 +494,7 @@ function displayLeads(leads, page = 1, pageSize = 10) {
 
         remarksTextArea.addEventListener("input", () => {
             submitCallStatus(
-                lead.leadId,
+                lead.leadCode,
                 callStatusDropdown.value,
                 remarksTextArea.value
             );
